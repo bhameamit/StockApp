@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">StockPrice</string>
+    <string name="main">Main</string>
+    <string name="title">Stock Name</string>
+</resources>
