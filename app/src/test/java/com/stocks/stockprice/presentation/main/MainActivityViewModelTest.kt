@@ -23,6 +23,8 @@ import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
 import org.mockito.Mock
 import org.mockito.Mockito
+import org.mockito.Mockito.times
+import org.mockito.Mockito.verify
 import org.mockito.MockitoAnnotations
 
 @RunWith(JUnit4::class)
@@ -56,10 +58,10 @@ class MainActivityViewModelTest {
             val flow = flow<BaseResult<List<StockEntity>, StockResponse<MetaResponse, List<DataResponse>>>> {
                 emit(result)
             }
-
             Mockito.`when`(getAllStocksUseCase.invoke()).thenReturn(flow)
+            mainActivityViewModel.fetchAllStocks()
+            verify(mainActivityViewModel, times(1)).fetchAllStocks()
         }
-
 
     }
 }
