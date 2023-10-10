@@ -1,25 +1,21 @@
-package com.stocks.stockprice
+package com.stocks.stockprice.presentation.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
-import androidx.activity.viewModels
 import androidx.compose.runtime.mutableStateListOf
-import com.stocks.stockprice.R
-import com.stocks.stockprice.adapter.AllStockRVAdapter
+import com.stocks.stockprice.presentation.ui.adapter.AllStockRVAdapter
 import com.stocks.stockprice.databinding.ActivityMainBinding
-import com.stocks.stockprice.presentation.main.MainActivityViewModel
+import com.stocks.stockprice.presentation.viewmodel.MainActivityViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import androidx.compose.runtime.*
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.stocks.stockprice.domain.stocks.entity.StockEntity
-import com.stocks.stockprice.presentation.main.MainActivityState
+import com.stocks.stockprice.presentation.viewmodel.MainActivityState
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
@@ -52,8 +48,6 @@ class MainActivity : AppCompatActivity() {
             observeStocks()
 
         },10000)
-
-
 
 
     }

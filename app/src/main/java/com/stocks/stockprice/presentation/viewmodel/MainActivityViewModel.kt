@@ -1,16 +1,14 @@
-package com.stocks.stockprice.presentation.main
+package com.stocks.stockprice.presentation.viewmodel
 
 import android.util.Log
 import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.stocks.stockprice.MainActivity
 import com.stocks.stockprice.domain.common.BaseResult
 import com.stocks.stockprice.domain.stocks.entity.StockEntity
 import com.stocks.stockprice.domain.stocks.usecase.GetAllStocksUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
-import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
